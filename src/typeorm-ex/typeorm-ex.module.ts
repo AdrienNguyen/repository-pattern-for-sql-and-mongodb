@@ -15,16 +15,12 @@ export class TypeOrmExModule {
         repository,
       );
 
-      console.log(entity.name);
-
       if (!entity) {
         continue;
       }
 
-      const providerName = entity.name.toUpperCase() + '_' + 'REPOSITORY';
-
       providers.push({
-        provide: providerName,
+        provide: entity.name,
         useFactory: (dataSource: DataSource): typeof repository => {
           const baseRepository = dataSource.getRepository<any>(entity);
           return new repository(

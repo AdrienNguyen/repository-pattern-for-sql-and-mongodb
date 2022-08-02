@@ -27,6 +27,7 @@
     "@nestjs/mongoose": "^9.2.0",
     "@nestjs/platform-express": "^8.0.0",
     "@nestjs/typeorm": "^9.0.0",
+    "dotenv": "^16.0.1",
     "mongoose": "^6.5.0",
     "mysql2": "^2.3.3",
     "reflect-metadata": "^0.1.13",

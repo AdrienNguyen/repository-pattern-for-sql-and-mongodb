@@ -1,15 +1,13 @@
 import {
-  BaseEntity,
   Column,
   CreateDateColumn,
   Entity,
-  ObjectID,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
 
 @Entity('users')
-export class UserSQL extends BaseEntity {
+export class UserSQL {
   @PrimaryGeneratedColumn()
   id: number;
 

@@ -19,12 +19,8 @@ export class MongooseExModule {
         continue;
       }
 
-      const providerName =
-        entityProperties.name.toUpperCase() + '_' + 'REPOSITORY';
-      console.log(providerName);
-
       providers.push({
-        provide: providerName,
+        provide: entityProperties.name,
         useFactory: (): any => {
           const model = mongoose.model(
             entityProperties.name,

@@ -1,3 +1,3 @@
 export interface UserRepository {
-  findUserByEmail(email: string): any;
+  findUserByEmail(email: string);
 }
