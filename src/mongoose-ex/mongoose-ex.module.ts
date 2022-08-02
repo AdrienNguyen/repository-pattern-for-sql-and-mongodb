@@ -1,5 +1,4 @@
 import { DynamicModule, Provider } from '@nestjs/common';
-import { MongooseModule } from '@nestjs/mongoose';
 import mongoose from 'mongoose';
 import { MONGOOSE_EX_CUSTOM_REPOSITORY } from './mongoose-ex.decorator';
 

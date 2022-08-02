@@ -1,6 +1,4 @@
 import { Controller, Get, Query } from '@nestjs/common';
-import { AppDataSource } from 'src/database/datasource';
-import { UserSQL } from './entities/user.sql.entity';
 import { UserService } from './user.service';
 
 @Controller('users')
@@ -12,10 +10,13 @@ export class UserController {
     return this.userService.findUserByEmail(email);
   }
 
-  // @Get('/getall')
-  // async getAll() {
-  //   return AppDataSource.manager.getMongoRepository(UserSQL).findOneBy({
-  //     email: 'phuong02@gmail.com',
-  //   });
-  // }
+  @Get('/getall')
+  async getAll() {
+    return this.userService.getAll();
+  }
+
+  @Get('/getone')
+  async getOne() {
+    return this.userService.getOne();
+  }
 }

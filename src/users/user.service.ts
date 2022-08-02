@@ -1,16 +1,27 @@
 import { Inject, Injectable } from '@nestjs/common';
-import { UserSQL } from './entities/user.sql.entity';
+import { UserModel } from './entities';
 import { UserRepository } from './repositories/user.repository';
 
 @Injectable()
 export class UserService {
   constructor(
-    @Inject(UserSQL.name)
+    @Inject(UserModel.name)
     private readonly userRepository: UserRepository,
   ) {}
   async findUserByEmail(email: string) {
     const user = await this.userRepository.findUserByEmail(email);
-    console.log(user);
+    return user;
+  }
+
+  async getAll() {
+    const users = await this.userRepository.getAll();
+    return users;
+  }
+
+  async getOne() {
+    const user = await this.userRepository.getOne({
+      email: 'phuong02@gmail.com',
+    });
     return user;
   }
 }
